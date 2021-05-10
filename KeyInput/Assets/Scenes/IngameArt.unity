@@ -1367,6 +1367,8 @@ MonoBehaviour:
   currentStamina: 100
   staminaDecreaseSpeed: 5
   currentHP: 100
+  bloodEffect: {fileID: 1879272669879180, guid: 60e8bc2d0b0cd084f82b29d5a44392de,
+    type: 3}
 --- !u!4 &564786317
 Transform:
   m_ObjectHideFlags: 0
@@ -1411,7 +1413,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.23
+  m_Radius: 0.4
   m_Height: 1.6
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
@@ -2070,15 +2072,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794227188}
-  m_LocalRotation: {x: -0, y: -0.29136682, z: -0, w: 0.95661145}
-  m_LocalPosition: {x: -5.9, y: 0, z: -3.81}
+  m_LocalRotation: {x: -0, y: -0.00400165, z: -0, w: 0.999992}
+  m_LocalPosition: {x: 0.14, y: 0, z: -3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 101586816}
   - {fileID: 954218130}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: -33.88, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.45900002, z: 0}
 --- !u!114 &794227190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6987,14 +6989,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'J_L_HairFront_00'\n\tTransform 'J_L_HairSide_00'\n\tTransform
-    'J_R_HairSide_00'\n\tTransform 'J_L_HairFront_00'\n\tTransform 'J_L_HairSide_00'\n\tTransform
-    'J_R_HairSide_00'\n\tTransform 'J_L_HairFront_00'\n\tTransform 'J_L_HairSide_00'\n\tTransform
-    'J_R_HairSide_00'\n\tFrom animation clip 'WAIT01'\n\tFrom animation clip 'WALK00_F'\n\tFrom
-    animation clip 'RUN00_F'\n\tFrom animation clip 'RUN00_L'\n\tFrom animation clip
-    'RUN00_R'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0

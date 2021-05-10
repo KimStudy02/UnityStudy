@@ -15,18 +15,25 @@ public class Character : MonoBehaviour
     public float currentHP = 100;
 
     private IngameUI ingameUI;
+
+    public GameObject bloodEffect;
     public void Start()
     {
         transform.position = Vector3.zero;
 
         ingameUI = UIManager.Instance.GetUI<IngameUI>(UIList.IngameUI);
-        ingameUI.SetStamina(currentStamina);
-        ingameUI.SetHp(currentHP);
-        ingameUI.Show();
+        if(ingameUI != null)
+        {
+            ingameUI.SetStamina(currentStamina);
+            ingameUI.SetHp(currentHP);
+            ingameUI.Show();
+        }
     }
+
 
     public void Update()
     {
+
         bool isMove = false;
 
 
@@ -64,8 +71,10 @@ public class Character : MonoBehaviour
         if (isMove)
         {
             currentStamina -= staminaDecreaseSpeed * Time.deltaTime;
-
-            ingameUI.SetStamina(currentStamina);            
+            if(ingameUI != null)
+            {
+                ingameUI.SetStamina(currentStamina);
+            }
 
            
         }
@@ -99,6 +108,14 @@ public class Character : MonoBehaviour
         {
             PortalBase portal = other.GetComponent<PortalBase>();
             portal.OnIntoPortal(this.gameObject);
+            
+        }
+        if (other.CompareTag("Bullet"))
+        {
+            GameObject effect = Instantiate(bloodEffect);
+            effect.transform.position = other.transform.position;      
+            effect.transform.rotation = Quaternion.Inverse(other.transform.rotation);
+            effect.SetActive(true);
         }
     }
 
@@ -108,25 +125,33 @@ public class Character : MonoBehaviour
         {
             // Todo: Damage ㅊㅓㄹㅣ
             Damaged(3);
+            
+            //GameObject effect = Instantiate(bloodEffect);
+            //effect.transform.position = collision.GetContact(0).point;
+            //effect.SetActive(true);
 
+            //Bullet InActive!;
+            //collision.gameObject.SetActive(false);
             // Blood Particle Effect Instantiate!!
 
-            // Bullet InActive!
-            //collision.gameObject.SetActive(false);
 
-            Destroy(collision.gameObject);
+
+
+            //Destroy(collision.gameObject);
         }
 
-        //if (collision.gameObject.CompareTag("Missile"))
-        //{
-        //    Damaged(10);
-        //}
+        
     }
 
     private void Damaged(float damage)
     {
         currentHP -= damage;
-        ingameUI.SetHp(currentHP);
+        if (ingameUI != null)
+        {
+            ingameUI.SetHp(currentHP);
+        }
+            
+        
     }
 
     #region 충돌 검사 함수들
