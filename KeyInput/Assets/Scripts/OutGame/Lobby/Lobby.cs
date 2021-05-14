@@ -9,4 +9,15 @@ public class Lobby : MonoBehaviour
         LobbyUI lobbyUI = UIManager.Instance.GetUI<LobbyUI>(UIList.LobbyUI);
         lobbyUI.Show();
     }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitUI exitUI = UIManager.Instance.GetUI<ExitUI>(UIList.ExitUI);
+            exitUI.Show();
+        }
+        
+
+
+    }
 }
