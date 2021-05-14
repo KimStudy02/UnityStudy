@@ -13,6 +13,7 @@ public enum UIList
     SampleUI,
 
 
+    ExitUI,
 
 
     MAX_SCENE_POPUP,
