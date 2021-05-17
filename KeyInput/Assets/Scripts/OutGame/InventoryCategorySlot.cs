@@ -10,6 +10,12 @@ public class InventoryCategorySlot : MonoBehaviour
     public Button slotButton;
     public void Init(ItemCategoryTypes type)
     {
+        slotType = type;
         slotText.text = type.ToString();
+    }
+
+    public void OnClickCategoryButton()
+    {
+        InventoryUI.Instance.SetInventoryPage(slotType);
     }
 }
