@@ -24,6 +24,7 @@ public enum ItemCategoryTypes
     CategoryMax
 }
 
+[System.Serializable]
 public struct ItemData
 {
     public ItemCategoryTypes itemType;

@@ -8,6 +8,7 @@ public enum SceneTypes
     Lobby,
     Ingame,
     IngameArt,
+    ShootingGame,
 }
 
 public class Main : MonoBehaviour
@@ -30,10 +31,16 @@ public class Main : MonoBehaviour
         LoadScene(SceneTypes.Lobby);
     }
 
-    public void LoadScene(SceneTypes sceneType)
+    public void LoadScene(SceneTypes sceneType, bool isAdditive = false)
     {
-        SceneManager.LoadScene(sceneType.ToString());
-
-        //symless (심리스)
+        if(isAdditive == true)
+        {
+            SceneManager.LoadScene(sceneType.ToString(), LoadSceneMode.Additive);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneType.ToString());
+        }
+               
     }
 }

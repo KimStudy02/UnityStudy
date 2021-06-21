@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IngameArt.unity
     guid: 04a00664c9f332e419d6362d820e688a
+  - enabled: 1
+    path: Assets/Scenes/IngameWorld.unity
+    guid: 3ec682c1c75801947bdc0d36222d553d
+  - enabled: 1
+    path: Assets/Scenes/ShootingGame.unity
+    guid: d9ac281849ee5804a9269403d22b5e63
   m_configObjects: {}

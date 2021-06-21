@@ -15,6 +15,15 @@ public class LobbyUI : UIBase
         Hide();
     }
 
+    public void OnClickShootingStartButton()
+    {
+
+        Main.Instance.LoadScene(SceneTypes.ShootingGame);
+
+        Hide();
+
+    }
+
 
 
 

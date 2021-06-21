@@ -13,6 +13,7 @@ public enum UIList
     SampleUI,
 
 
+
     ExitUI,
 
 
@@ -24,7 +25,7 @@ public enum UIList
     //===========================================================
     SCENE_PANEL,
 
-    
+    ShootingGameUI,
 
     IngameUI,
     LobbyUI,

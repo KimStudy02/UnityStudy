@@ -11,6 +11,6 @@ public class Ingame : MonoBehaviour
         IngameUI ingameUI = UIManager.Instance.GetUI<IngameUI>(UIList.IngameUI);
         ingameUI.Show();
 
-        Main.Instance.LoadScene(SceneTypes.IngameArt);
+        Main.Instance.LoadScene(SceneTypes.IngameArt, true);
     }
 }
